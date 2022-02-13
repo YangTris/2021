@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+#header {
+  background-color: black;
+  height: 46px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#nav {
+  display: inline-block;
+}
+#nav img {
+  position: absolute;
+  height: 46.4px;
+}
+#nav,
+.subnav {
+  list-style: none;
+}
+#nav > li {
+  margin-left: 100px;
+  display: inline-block;
+}
+#nav li {
+  position: relative;
+}
+#nav > li > a {
+  color: white;
+  text-transform: uppercase;
+}
+#nav li a {
+  /* color: white; */
+  text-decoration: none;
+  line-height: 46.4px;
+  padding: 0px 24px;
+  display: inline-block;
+}
+#nav > li:hover > a {
+  color: black;
+  background-color: #ccc;
+}
+#nav li:hover .subnav {
+  display: block;
+}
+#nav .subnav {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-width: 160px;
+  top: 46px;
+  left: 0;
+}
+#nav .subnav a {
+  width: 100% auto;
+  color: black;
+  padding: 0px 16px;
+}
+
+#nav .subnav li:hover {
+  color: black;
+  background-color: #ccc;
+}
+.btn {
+  float: right;
+  background-color: black;
+  height: 18px;
+  border: 0px;
+}
+
+#header .user-icon:hover {
+  color: black;
+  background-color: #ccc;
+}
+#header .search-icon:hover {
+  color: black;
+  background-color: #ccc;
+}
+
+#header .search-icon,
+#header .user-icon {
+  color: white;
+  font-size: 20px;
+  line-height: 46px;
+  padding: 0px 20px;
+}
+.user-icon {
+  float: right;
+}
+#header .search {
+  float: right;
+}
+#header #search-bar {
+  border-radius: 12px;
+  border-width: 1px;
+  height: 30px;
+  width: 200px;
+  padding: 10px;
+  outline: none !important;
+  box-shadow: 0 0 10px whitesmoke;
+  margin: 9px;
+}
+#slider {
+  background-color: blanchedalmond;
+  margin-top: 46px;
+}
+#slider img {
+  display: block;
+  margin: 0 auto;
+}
+#about {
+  background: linear-gradient(#141e30, #243b55);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  color: whitesmoke;
+  padding: 50px;
+}
+#about #box {
+  width: 50%;
+  float: left;
+  padding: 0 15px;
+}
+#about #box h1 {
+  color: #e75b1e;
+  font-size: 52px;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+#about #box h2 {
+  padding-bottom: 10px;
+}
+#about #box p {
+  font-size: 20px;
+  line-height: 2;
+}
+#about #box .quote {
+  float: right;
+}
+#about #about-img img {
+  border-radius: 500px;
+}
+#content {
+  padding: 100px 15px;
+}
+#content h1 {
+  text-align: center;
+  color: #e75b1e;
+  font-size: 52px;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#menu {
+  background-color: rgba(245, 245, 245, 1);
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100px;
+  height: 600px;
+}
+#bar1 {
+  background-color: #e75b1e;
+}
+#bar li {
+  display: inline-block;
+  text-align: center;
+  height: 100px;
+  font-size: 32px;
+  line-height: 100px;
+  padding: 0px 42px;
+}
+
+#bar li a {
+  color: black;
+}
+hr {
+  margin-bottom: 20px;
+}
+#menu-list .show {
+  width: 50%;
+  padding: 0 15px;
+  float: left;
+}
+
+.show img {
+  height: 150px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 50%;
+  float: left;
+}
+.show div {
+  float: left;
+  padding: 15px;
+  width: 220px;
+}
+.show h3 {
+  color: #e75b1e;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.show p {
+  display: inline-block;
+  width: 70%;
+}
+
+.show .quantity {
+  float: right;
+  width: 50px;
+}
+.show .show-btn {
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px;
+}
+.show .price {
+  border: #e75b1e solid 1px;
+  border-radius: 92px;
+  width: 92px;
+  height: 92px;
+  line-height: 92px;
+  font-size: 26px;
+  float: right;
+  text-align: center;
+  margin: 29px;
+}
+
+#footer {
+  clear: both;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+#contact {
+  height: 350px;
+  max-width: 1000px;
+  padding: 64px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+#contact h1 {
+  color: #e75b1e;
+  font-family: "Comic Sans MS";
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+#contact-left {
+  width: 50%;
+  float: left;
+}
+#contact-left i {
+  margin: 5px 15px;
+}
+#contact-left a {
+  color: white;
+}
+#contact-right {
+  width: 50%;
+  float: right;
+}
+#contact-right input {
+  padding: 10px;
+  outline: none !important;
+  margin-bottom: 5px;
+  width: 49.5%;
+  font-size: 15px;
+}
+#contact-right .size {
+  width: 100%;
+}
+#contact-right .contact-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: whitesmoke;
+  line-height: 40px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  display: flex;
+}
+.modal-container {
+  width: 900px;
+  min-height: 200px;
+  background-color: #fff;
+  position: relative;
+  max-width: calc(100% - 32px);
+  animation: modalMotion ease 0.9s;
+}
+.modal-container .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-container .modal-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  font-size: 30px;
+  background-color: #243b55;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.modal-icon {
+  margin-right: 20px;
+}
+.modal-box {
+  width: 50%;
+  padding: 0 20px;
+  float: left;
+}
+.modal-label {
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.modal-input {
+  width: 100%;
+  border: #ccc solid 1px;
+  padding: 10px;
+  font-size: 15px;
+}
+.modal-box-left {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  font-size: 17px;
+  text-align: center;
+  /* display: inline; */
+}
+
+#card-name,
+#box-mon-an {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+#card-sl,
+#box-sl {
+  width: 25%;
+  float: left;
+  text-align: left;
+}
+#card-price,
+#box-gia {
+  width: 25%;
+  float: left;
+}
+.modal-footer {
+  margin: 20px;
+}
+.modal-box-left {
+  float: right;
+}
+#pay {
+  cursor: pointer;
+  clear: both;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  background-color: #243b55;
+  color: #fff;
+  text-transform: uppercase;
+}
+.pay:hover {
+  opacity: 0.9;
+}
+
+@keyframes modalMotion {
+  from {
+    opacity: 0.5;
+    transform: translateY(-100);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#card-box {
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+#card-name {
+  float: left;
+}
+#card-sl {
+  width: 50px;
+  margin-left: 20px;
+}
+#card-price {
+  float: right;
+  /* padding-right: 40px; */
+}

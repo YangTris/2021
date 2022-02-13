@@ -1,0 +1,566 @@
+#includeiostream
+#include string.h
+#includefstream
+#includemath.h
+using namespace std;
+
+float bai1(int n){
+	if(n=0)	return 0;
+	return 1.0n + bai1(n-1); 
+}
+
+int bai2a(int n){
+	if(n0)	return 0;
+	if(n==1n==2)	return 1;
+	return bai2a(n-1) + (n-1)bai2a(n-2);
+}
+
+int bai2b(int n){
+	if(n0)	return 0;
+	if(n==1n==2)	return 1;
+	int x_1=1,x_2=1,x;
+		for(int i=3;i=n;i++){
+			x=x_2 + (i-1)x_1;
+			x_1=x_2;
+			x_2=x;
+		}
+	return x;
+}
+
+int bai3(int n,int a){
+	if(n==1)	return a[0];
+	if (a[n-1]bai3(n-1,a)) return a[n-1];
+    return bai3(n-1,a);
+}
+
+bool isPrime(int n){
+	if(n2) return 0;
+	for(int i=2;i=sqrt(n);i++)
+		if(n%i==0)	return 0;
+	return 1;
+}
+
+int bai4(int n, int a) 
+{
+	if(n1) return 0;
+	return isPrime(a[n-1])  bai4(n-1, a) + 1  bai4(n-1, a);
+}
+
+int bai5(int n,int a){
+	int p;
+	coutInput p;
+	cinp;
+	while(p0pn){
+		coutInput p again;
+		cinp;
+	}
+	
+	for(int i=0;in;i++){
+		coutInput a[i];
+		cina[i];
+	}
+	
+	for(int i=p-1;in;i++){
+		a[i]=a[i+1];
+	}
+	n--;
+	
+	coutNew Array ;
+	for(int i=0;in;i++)
+		couta[i] ;
+	return 0;
+}
+
+int bai6(int n,int a){
+	for(int i=0;in;i++){
+		coutInput a[i];
+		cina[i];
+	}
+
+	int max=0,count=0;
+	for(int i=0;in;i++){
+		if(a[i]max){
+			max=a[i];
+		}
+	}
+	coutMax=maxendl;
+	for(int i=0;in;i++){
+		if(a[i]==max)	count++;
+	}
+	coutSo = gia tri lon nhat lacount;
+	return 0;
+}
+
+int bai7(int n,int m,int b){	
+	for(int i=0;im;i++){
+		for(int j=0;jn;j++){
+			coutInput b[i][j];
+			cinb[i][j];
+		}
+	}	
+	
+	int sum=0;
+	for(int i=0;im;i++)
+		for(int j=0;jn;j++)
+			sum+=b[i][j];
+	coutSum=sum;
+	return 0;
+}
+
+int bai8(char s){
+	gets(s);
+	int p,l;
+	coutInput p&l;
+	cinpl;
+	for(int i=0;istrlen(s);i++){
+		while(p0){
+			couts[i];
+			i++;
+			p--;
+		}
+		while(l0){
+			l--;
+			i++;
+		}
+		couts[i];
+	}
+	return 0;
+}
+
+int bai9_13(char s){
+	gets(s);
+	int count=1;
+	for(int i=0;i=strlen(s);i++){
+		if(s[i]==32)	count++;
+	}
+	coutKet qua bai 9 countendl;
+	
+	count=0;
+	coutKet qua bai 10 ;
+	for(int i=0;i=strlen(s);i++){				10
+		if(s[i]='a'&&s[i]='z')
+			count++;
+		if(s[i]=='0's[i]==' '){
+			coutcount ;
+			count=0;
+		}
+	}
+	
+	coutendlKet qua bai 11 ;
+	for(int i=0;i=strlen(s);i++){				11
+		if(s[i]==32)	break;
+		couts[i];
+	}
+	
+	char x=new char[100];						13
+	coutendlInput x;
+	gets(x);
+	if(!strstr(s,x))	coutKet qua bai 13 -1;
+	else
+		coutendlKet qua bai 13strlen(s)-strlen(strstr(s,x))endl;
+	
+	count=0;									12
+	char res;
+	char p;
+	if(!s){
+		coutNot enough memory!;
+		exit(0);
+	}
+	p=strtok(s, );
+	while(p){
+		if(strlen(p)count){
+			count=strlen(p);
+			res=p;
+		}
+		p=strtok(NULL, );
+	}
+	coutendlKet qua bai12res;
+	delete []x;
+	delete p;
+	delete res;
+	
+	return 0;
+}
+
+bool SCP(int n){
+	if(n2)	return 0;
+	if(sqrt(n) == (int) sqrt(n))	return 1;
+	return 0;
+}
+
+
+bool SHH(int n){
+    int sum = 0;
+    for(int i=1;i=n2;i++)
+        if(n%i==0)
+            sum+=i;
+    if(sum==n) return 1;
+    return 0;
+}
+
+void bai14_18(ifstream &fin,ofstream &fout,int a){
+	int n,m;
+    float avg;
+    finnm;
+    if(n0m0){
+    	coutData error!;
+    	exit(0);
+	}
+	
+   	for(int i=0;in;i++){
+		fina[i];
+	}
+   
+  	for(int i=0;in;i++){
+  		avg+=a[i];
+	}
+
+	coutBai 14 avgn;
+	foutBai 14 avgn;
+	
+	int snt=0,scp=0,shh=0;
+	for(int i=0;in;i++){
+		if(isPrime(a[i]))	snt++;
+		if(SCP(a[i]))	scp++;
+		if(SHH(a[i]))	shh++;
+	}
+   coutendlBai 15 snt scp shh;
+   foutendlBai 15 snt scp shh;
+   
+   int count=0;
+   for(int i=0;in;i++){
+  		for(int j=i+1;jn;j++){
+  			if(a[i]+a[j]==m)	count++;
+		}
+	}
+	coutendlBai 16 count;
+	foutendlBai 16 count;
+	
+	int max;
+	count=1;
+	for(int i=0;in-1;i++){
+  		if(a[i]=a[i+1])	count++;
+  		if(a[i]a[i+1]){
+  			if(countmax)	max=count;
+  			count=1;
+		}
+	}
+	coutendlBai 17 max;
+	foutendlBai 17 max;
+	
+	for(int i=0;in-1;i++){
+  		for(int j=i+1;jn;j++){
+  			if(a[i]=a[j]){
+  				swap(a[i],a[j]);
+			}
+		}
+	}
+	
+	foutendlBai 18 ;
+	for(int i=0;in;i++){
+		fouta[i] ;
+	}
+	
+	
+	delete []a;
+}
+
+void bai19_22(ifstream &fi,ofstream &fo,int b,int n,int m){
+	int i,j;
+	
+	for( i=0;im;i++){
+		for( j=0;jn;j++){
+			fib[i][j];
+		}
+	}
+	
+	int sum=0;
+	foBai 19 ;
+	for( i=0;im;i++){
+		for( j=0;jn;j++){
+			sum+=b[i][j];
+		}
+		fosum ;
+		sum=0; 
+	}
+	
+	foendl;
+	for( j=0;jn;j++){
+		for( i=0;im;i++){
+			sum+=b[i][j];
+		}
+		fosum ;
+		sum=0; 
+	}
+	
+	foendlBai 21 ;
+	for(int k = 0; km ; k++)
+    	for( i = 0; in-1 ; i++)
+    		for( j = n-1; ji ; j--)
+     			 if(b[k][j]b[k][j-1])
+    			    swap(b[k][j],b[k][j-1]);
+	
+	for( i=0;im;i++){
+		for( j=0;jn;j++){
+			fob[i][j] ;
+		}
+		foendl;
+	}
+	
+	int max=0;
+	foendlBai 20 ;
+	for(i=0;im;i++){
+		if(b[i][0]max)	max=b[i][0];		
+	}
+	fomax;
+	
+	sum=0;
+	for( i=0;im;i++){
+		for( j=0;jn;j++){
+			while(b[i][j]9b[i][j]-9){
+				sum+=b[i][j]%10;
+				b[i][j]=10;
+			}
+			if(b[i][j]10)
+				sum+=b[i][j];
+		}
+	}
+	foendlBai 22 sum;
+}
+
+void bai23(ifstream &finp,ofstream &foutp,int n){
+	int i,j;
+	int b[100][100];
+	
+	for( i=0;in;i++){
+		for( j=0;jn;j++){
+			finpb[i][j];
+		}
+	}
+	
+	int sum=0;
+	for(int i=0;in;i++){
+		sum+=b[i][i];
+	}
+	foutpbai 23a sum't';
+	
+	sum=0;
+	int max=0,min=n-1;
+	while(min=0){
+		sum+=b[max][min];
+		max++;
+		min--;
+	}
+	foutpsumendl;
+	
+	sum=0;
+	for( i=0;in;i++){
+		for( j=n-1;ji;j--){
+			sum+=b[i][j];
+		}
+	}
+	foutpBai 23b sum't';
+	
+	sum=0;
+	for( i=0;in;i++){
+		for( j=0;ji;j++){
+			sum+=b[i][j];
+		}
+	}
+	foutpsum;
+}
+
+int UCLN(int a, int b){
+	if (a == 0  b == 0)	return a + b;
+    
+	while (a != b){
+        if (a  b)	a -= b;  a = a - b
+		else
+            b -= a;
+    }
+    
+    return a;  return a or b, boi vì lúc này a và b = nhau
+}
+
+void bai24_25(ifstream &inp,ofstream &out,int n){
+	int tu[100],mau[100];
+	int i,j;
+	for(i=0;in;i++){
+		inptu[i];
+		inpmau[i];
+	}
+	
+	float c[100];
+
+	for(int i=0;in;i++){
+		c[i]=tu[i]1.0mau[i];
+	}
+	
+	for(i=0;in-1;i++){
+		for(j=i+1;jn;j++){
+			if(c[i]c[j]){
+				swap(tu[i],tu[i+1]);
+				swap(mau[i],mau[i+1]);
+			}
+		}
+	}
+	
+	coutBai 24 ;
+	for(i=0;in;i++){
+		couttu[i]mau[i] ;
+	}
+	
+	int mc=1,tc=0;
+	for(i=0;in;i++){
+		mc=mau[i];
+	}
+	
+	int temp=0;
+	for(i=0;in;i++){
+		temp=mcmau[i];
+		tc+=temptu[i];
+	}
+	
+	temp=UCLN(tc,mc);
+	tc=temp;
+	mc=temp;
+	coutendlBai 25 tcmc;
+	
+}
+
+int main(){
+	int n,p,m;
+	int a=new int [10000];
+	char s=new char[10000];
+	int b=new int [m];
+	for(int i=0;im;i++){
+		b[i]=new int [n];
+	}
+	if(!a!s!b){
+		coutNot enough memory!;
+		exit(0);
+	}
+	ifstream fin(ENUM.INP);					ENUM.INP
+    ofstream fout(ENUM.OUT);					ENUM.OUT
+    ifstream fi(ETABLE.txt);					ETABLE.txt
+    ofstream fo(ETABLEO.txt);					ETABLEO.txt
+    ifstream finp(ESQUARE.txt);				ESQUARE.txt
+    ofstream foutp(ESQUAREO.txt);				ESQUAREO.txt
+    ifstream inp(Efraction.txt);				Efraction.txt
+    ofstream out(Efractiono.txt);				Efractiono.txt
+    if(!fin!fout!fi!fo!finp!foutp!inp!out){
+		coutFile Error!;
+		exit(0);
+	}
+	int k;
+	coutChosse menu;	cink;
+	switch(k){
+		case 1
+			coutInput n; cinn;				n=5 return 2,28333
+			coutResult=bai1(n);
+			break;
+		case 2
+			coutInput n; cinn;				n=5 return 18
+			coutResult 2a=bai2a(n)endl;
+			coutResult 2b=bai2b(n);
+			break;
+			
+		case 3
+			coutInput n; cinn;				21 53 78 97 10	Max=97
+			for(int i=0;in;i++){
+				coutInput a[i];
+				cina[i];
+			}
+			coutMax=bai3(n,a);
+			break;
+		case 4
+			coutInput n; cinn;				
+			for(int i=0;in;i++){
+				coutInput a[i];
+				cina[i];
+			}
+			coutBai 4 bai4(n,a);
+			break;
+		case 5
+			coutInput n;
+			cinn;
+			while(n0){
+				coutInput n again;
+				cinn;
+			}
+			bai5(n,a);
+			break;
+		case 6
+			coutInput n;
+			cinn;
+			while(n0){
+				coutInput n again;
+				cinn;
+			}
+			bai6(n,a);
+			break;
+		case 7
+			coutInput n&m;
+			cinnm;
+			while(n0m0){
+				coutInput n&m again;
+				cinnm;
+			}
+			bai7(n,m,b);
+			break;
+		case 8
+			coutInput s;						
+			gets(s);
+			bai8(s);
+			break;
+		case 9
+			coutInput s;
+			gets(s);
+			bai9_13(s);
+			break;
+		case 14
+			bai14_18(fin,fout,a);
+			break;
+		case 19
+			fimn;
+			if(n0m0){
+    			coutData error!;
+  			  	exit(0);
+			}
+			bai19_22(fi,fo,b,n,m);
+			break;
+		case 23
+			finpn;
+			if(n0){
+    			coutData error!;
+  			  	exit(0);
+			}
+			bai23(finp,foutp,n);
+			break;
+		case 24
+			inpn;
+			if(n0){
+    			coutData error!;
+  			  	exit(0);
+			}
+			bai24_25(inp,out,n);
+			break;
+		default
+			coutExit the program!;
+			exit(0);
+	}
+	inp.close();
+	out.close();
+	finp.close();
+	foutp.close();
+	fi.close();
+	fo.close();
+	fin.close();
+	fout.close();
+	for(int i=0;im;i++)
+		delete[] b[i];
+	delete []b;	
+	delete []a;
+	delete []s;
+	return 0;
+}

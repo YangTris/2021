@@ -1,0 +1,224 @@
+html,
+body {
+  margin: 3% auto;
+  background-color: #92a8d1;
+}
+
+.form {
+  display: flex;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+.form.open {
+  display: flex;
+}
+.form-container {
+  width: 40%;
+  min-height: 200px;
+  background-color: #fff;
+  position: relative;
+  max-width: calc(100% - 32px);
+}
+.form-container .form-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-container .form-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  font-size: 30px;
+  background-color: #243b55;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.form-icon {
+  margin-right: 20px;
+}
+.form-box {
+  width: 95%;
+  padding: 0 20px;
+  float: left;
+}
+.form-label {
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.form-input {
+  width: 100%;
+  border: #ccc solid 1px;
+  padding: 10px;
+  font-size: 15px;
+}
+.form-box-left {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  font-size: 17px;
+  text-align: center;
+}
+
+.form-footer {
+  margin: 10px;
+}
+
+.pay {
+  clear: both;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  background-color: #243b55;
+  color: #fff;
+  text-transform: uppercase;
+}
+.pay:hover {
+  opacity: 0.9;
+}
+p {
+  text-align: right;
+  display: inline-block;
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.create {
+  color: salmon;
+  display: inline-block;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  display: flex;
+}
+.modal-container {
+  width: 900px;
+  min-height: 200px;
+  background-color: #fff;
+  position: relative;
+  max-width: calc(100% - 32px);
+  animation: modalMotion ease 0.9s;
+}
+.modal-container .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-container .modal-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  font-size: 30px;
+  background-color: #243b55;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.modal-icon {
+  margin-right: 20px;
+}
+.modal-box {
+  width: 95%;
+  padding: 0 20px;
+  float: left;
+}
+.modal-label {
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.modal-input {
+  width: 100%;
+  border: #ccc solid 1px;
+  padding: 10px;
+  font-size: 15px;
+}
+.modal-box-left {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  font-size: 17px;
+  text-align: center;
+}
+
+#card-name,
+#box-mon-an {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+#card-sl,
+#box-sl {
+  width: 25%;
+  float: left;
+  text-align: left;
+}
+#card-price,
+#box-gia {
+  width: 25%;
+  float: left;
+}
+.modal-footer {
+  margin: 20px;
+}
+.modal-box-left {
+  float: right;
+}
+.pay {
+  clear: both;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  background-color: #243b55;
+  color: #fff;
+  text-transform: uppercase;
+}
+.pay:hover {
+  opacity: 0.9;
+}
+
+@keyframes modalMotion {
+  from {
+    opacity: 0.5;
+    transform: translateY(-100);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

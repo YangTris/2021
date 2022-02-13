@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script src="https://kit.fontawesome.com/7b2ce3e80c.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+
+<body>
+  <div class="form">
+    <div class="form-container">
+      <div class="form-close" onclick="home()">
+        <i class="fas fa-window-close"></i>
+      </div>
+      <header class="form-header">
+        <i class="form-icon far fa-bookmark"></i>
+        Đăng Nhập
+      </header>
+
+      <div class="form-box">
+        <label for="" class="form-label">
+          <i class="fas fa-user"></i>
+          username
+        </label>
+        <input type="text" class="form-input" placeholder="e.g: abcd" id="user">
+
+        <label for="" class="form-label">
+          <i class="fas fa-key"></i>
+          password
+        </label>
+        <input type="password" class="form-input" placeholder="e.g: abcd123" id="pass">
+      </div>
+
+      <div class="form-footer" onclick="login()">
+        <button class="pay">
+          <i class=" fas fa-check"></i>
+          Xác nhận
+        </button>
+      </div>
+      <p>Don't have account?</p>
+      <button class="create js-btn">
+        Create an account
+      </button>
+    </div>
+  </div>
+
+  <div class="modal js-modal">
+    <div class="modal-container js-modal-container">
+      <div class="modal-close js-modal-close">
+        <i class="fas fa-window-close"></i>
+      </div>
+      <header class="modal-header">
+        <i class="modal-icon far fa-bookmark"></i>
+        Đăng ký
+      </header>
+      <div class="modal-box">
+        <label for="" class="modal-label">
+          <i class="fas fa-user"></i>
+          Tên đăng nhập
+        </label>
+        <input type="text" class="modal-input" placeholder="e.g: abcd" id="user_name">
+
+        <label for="" class="modal-label">
+          <i class="fas fa-key"></i>
+          Mật Khẩu
+        </label>
+        <input type="password" class="modal-input" placeholder="e.g: abcd123" id="user_pass">
+
+
+        <label for="" class="modal-label">
+          <i class="fas fa-phone"></i>
+          Số điện thoại
+        </label>
+        <input type="text" class="modal-input" placeholder="e.g: 1234567890" id="user_phone">
+
+        <label for="" class="modal-label">
+          <i class="fas fa-envelope"></i>
+          Email
+        </label>
+        <input type="text" class="modal-input" placeholder="abcd123@gmail.com" id="user_gmail">
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="pay js-modal-submit" onclick="check()">
+          <i class=" fas fa-check"></i>
+          Xác nhận
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    function user(userName, passWord, phoneNumber, gmail) {
+      this.userName = userName
+      this.passWord = passWord
+      this.phoneNumber = phoneNumber
+      this.gmail = gmail
+    }
+
+    var userArray = [
+      new user('admin', 'admin', 1234567890, 'admin@gmail.com'),
+      new user('DVT', '123', 0987654321, 'DVT@gmail.com'),
+    ];
+
+    if (getUserLogin() === undefined) {
+      setUserLogin("");
+    }
+
+    function getUserLogin() {
+      return localStorage.isUserLogin;
+    }
+
+    function setUserLogin(username) {
+      localStorage.isUserLogin = username;
+    }
+
+    function login() {
+      var username = document.getElementById("user").value;
+      var password = document.getElementById("pass").value;
+
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].userName == username && list[i].passWord == password) {
+          setUserLogin(list[i].userName);
+          window.location = "food.html";
+          return alert('Đăng nhập thành công');
+        }
+      }
+      alert("Đăng nhập không thành công xin vui lòng thử lại");
+    }
+
+    function logout() {
+      setUserLogin("");
+    }
+
+    var btn = document.querySelector('.js-btn')
+    var modal = document.querySelector('.js-modal')
+    var modalClose = document.querySelector('.js-modal-close')
+    var modalContainer = document.querySelector('.js-modal-container')
+    var submit = document.querySelector('.js-modal-submit')
+    function open_modal() {
+      modal.classList.add('open')
+    }
+    function close_modal() {
+      modal.classList.remove('open')
+    }
+    btn.addEventListener('click', open_modal)
+    modal.addEventListener('click', close_modal)
+    modalClose.addEventListener('click', close_modal)
+    modalContainer.addEventListener('click', function (event) {
+      event.stopPropagation()
+    })
+
+    //Them ptu
+    const name_input = document.querySelector('#user_name');
+    const pass_input = document.querySelector('#user_pass')
+    const phone_input = document.querySelector('#user_phone')
+    const gmail_input = document.querySelector('#user_gmail')
+
+    var list = getData();
+
+    function addUser() {
+      var add = new user(name_input.value, pass_input.value, phone_input.value, gmail_input.value)
+      var arr = [];
+      arr = getData()
+      arr.push(add)
+      setData(arr)
+      list = getData()
+      alert('Tạo tài khoản thành công')
+      return submit.addEventListener('click', close_modal)
+    }
+
+    function getData() {
+      if (localStorage.userArray)
+        return JSON.parse(localStorage.userArray);
+      else
+        return []
+    }
+
+    function setData(arr) {
+      localStorage.userArray = JSON.stringify(arr);
+    }
+
+
+    function check() {
+      var test
+      var regex = /^[0-9]{10}$/
+      if (name_input.value.length < 4) {
+        alert('Tên đăng nhập phải trên 4 kí tự')
+        document.getElementById("user_name").focus();
+        return;
+      }
+      if (pass_input.value < 6) {
+        alert('Mật khẩu phải trên 6 kí tự')
+        document.getElementById("user_pass").focus();
+        return;
+      }
+      test = (/^[0-9]{10}$/.test(phone_input.value))
+      if (test == false) {
+        alert('Số điện thoại chỉ chứa kí tự từ 0-9 và phải có 10 chữ số')
+        document.getElementById("user_phone").focus();
+        return;
+      }
+      test = (/^[\w.+\-]+@gmail\.com$/.test(gmail_input.value))
+      if (test == false) {
+        alert('Định dạng phải là @gmail.com')
+        document.getElementById("user_gmail").focus();
+        return;
+      }
+      addUser();
+
+    }
+  </script>
+</body>
+
+</html>

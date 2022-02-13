@@ -1,0 +1,224 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="assets/css/food.css">
+    <script src="https://kit.fontawesome.com/7b2ce3e80c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <ul id="nav">
+            <div>
+                <img src="./assets/img/name9.png" height="30">
+            </div>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li>
+                <a href="#content">Menu <i class="fas fa-sort-down"></i></a>
+                <ul class="subnav">
+                    <li><a href="#content">Pizza</a></li>
+                    <li><a href="#content">Steak</a></li>
+                    <li><a href="#content">Sushi</a></li>
+                    <li><a href="#content">Thức uống</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button class="btn" onclick="login_html()">
+            <i class="user-icon fas fa-user"></i>
+        </button>
+        <button class="btn js-btn">
+            <i class="search-icon fas fa-shopping-cart"></i>
+        </button>
+        <div class="search">
+            <form>
+                <input type="text" id="search-bar" placeholder="Tìm kiếm" oninput="search()">
+                <datalist id="suggest">
+                    <option>Steak</option>
+                    <option>Pizza</option>
+                    <option>Sushi</option>
+                    <option>Trà sữa</option>
+                    <option>More</option>
+                </datalist>
+            </form>
+        </div>
+    </div>
+
+    <div id="slider">
+        <img src="assets/img/food.jpg">
+    </div>
+
+    <div id="about">
+        <div id="box">
+            <h1>Giới thiệu</h2>
+                <div style="padding-left: 20px;">
+                    <h2>Xin chào thầy / cô và các bạn</h3>
+                        <p>Đây là website nhà hàng bán thức ăn.</p>
+                        <p>Nhà hàng là sản phẩm tổng hợp các kiến thức đã học và cũng như cách xử lý những yêu cầu cho
+                            người dùng cuối (end-user)</p>
+                        <p class="quote">"Em xin chân thành cảm ơn quý thầy cô"</p>
+                </div>
+        </div>
+        <div id="about-img">
+            <img src="assets/img/steak2.jpg" alt="logo">
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>Menu</h1>
+        <div id="menu">
+            <div id="menu-bar">
+                <ul id="bar">
+                    <li class="display " id="bar1" value="1" onclick="display1(this)">
+                        <a>Best Seller</a>
+                        <i class="fas fa-utensils"></i>
+                    </li>
+                    <li class="display " id="bar2" value="2" onclick="display1(this)">
+                        <a>Pizza</a>
+                        <i class="fas fa-pizza-slice"></i>
+                    </li>
+                    <li class="display " id="bar3" value="3" onclick="display1(this)">
+                        <a>Sushi</a>
+                        <i class="fas fa-fish"></i>
+                    </li>
+                    <li class="display " id="bar4" value="4" onclick="display1(this)">
+                        <a>Steak</a>
+                        <img src="./assets/img/steak.png">
+                    </li>
+                    <li class="display " id="bar5" value="5" onclick="display1(this)">
+                        <a>Thức uống</a>
+                        <i class="fas fa-cocktail"></i>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+
+            <div id="menu-list">
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="footer">
+        <div id="contact">
+            <h1>Liên hệ</h1>
+            <div id="contact-box">
+                <div id="contact-left">
+                    <i class="far fa-clock"></i>
+                    Giờ mở cửa: 11:00 AM - 10:00 PM
+                    <br>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Địa điểm: TPHCM, VN
+                    <br>
+                    <i class="fas fa-phone"></i>
+                    Số điện thoại: 1234567890
+                    <br>
+                    <i class="fas fa-envelope"></i>
+                    Gmail: mail@gmail.com
+                    <br>
+                    <i class="fab fa-facebook-square"></i>
+                    <a href="#">Facebook</a>
+                    <br>
+                    <i class="fab fa-instagram"></i>
+                    <a href="#">Instagram</a>
+                </div>
+                <div id="contact-right">
+                    <form action="">
+                        <input type="text" placeholder="Tên">
+                        <input type="text" placeholder="Gmail">
+                        <input type="text" placeholder="Góp ý" class="size">
+                        <button type="submit" class="contact-btn">Xác nhận</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="fas fa-window-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="modal-icon far fa-bookmark"></i>
+                Đặt trước
+            </header>
+            <div class="modal-box">
+                <label for="" class="modal-label">
+                    <i class="fas fa-user"></i>
+                    Họ và tên
+                </label>
+                <input type="text" class="modal-input" placeholder="e.g: abcd">
+
+                <label for="" class="modal-label">
+                    <i class="fas fa-phone"></i>
+                    Số điện thoại
+                </label>
+                <input type="text" class="modal-input" placeholder="e.g: 1234567890">
+                <label for="" class="modal-label">
+                    <i class="fas fa-users"></i>
+                    Số người đi cùng
+                </label>
+                <input type="number" class="modal-input" value="1" min="1">
+
+                <label for="" class="modal-label">
+                    <i class="far fa-calendar-check"></i>
+                    Đặt lịch
+                </label>
+                <input type="datetime-local" class="modal-input">
+
+            </div>
+            <div class="modal-box-left">
+                <h3 id="box-mon-an">Món ăn</h3>
+                <h3 id="box-sl">Số lượng</h3>
+                <h3 id="box-gia">Giá</h3>
+
+                <div id="productList">
+
+                </div>
+                <br>
+                <div class="total_money">Tổng tiền: <span>0</span></div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="pay" class="js-modal-submit" onclick="Thanks()">
+                    <i class=" fas fa-check"></i>
+                    Xác nhận
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/food.js"></script>
+    <script>
+        var btn = document.querySelector('.js-btn')
+        var modal = document.querySelector('.js-modal')
+        var modalClose = document.querySelector('.js-modal-close')
+        var modalContainer = document.querySelector('.js-modal-container')
+        var submit = document.querySelector('.js-modal-submit')
+        function open_modal() {
+            renderGioHang()
+            modal.classList.add('open')
+        }
+        function close_modal() {
+            modal.classList.remove('open')
+        }
+        btn.addEventListener('click', open_modal)
+        modal.addEventListener('click', close_modal)
+        modalClose.addEventListener('click', close_modal)
+        submit.addEventListener('click', close_modal)
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+    </script>
+</body>
+
+</html>
